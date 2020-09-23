@@ -58,6 +58,7 @@ villainCenterXOffset = (villainWidth / 2);
 villainCenterYOffset = (villainHeight / 2);
 villainMinDistanceFromBottom = 200;
 villainMaxY = (canvasHeight - villainMinDistanceFromBottom - villainHeight);
+
 function preload () {
   backgroundImage = loadImage('assets/starfield.png');
   villain = loadImage('assets/ufo.png');
@@ -179,10 +180,16 @@ function restartBall () {
   animateBall();
 }
 
+function restartVillain(){
+  villainX = -800;
+  villainY = -800; // hide villain while game has not started
+}
+
 function gameLost () {
   gameStarted = false;
   restartPaddle();
   restartBall();
+  restartVillain()
 }
 function animateBall () {
   // ball borders
@@ -216,7 +223,6 @@ function animateBall () {
     distanceFromMiddleOfPaddle = Math.abs(paddleMiddle - ballX);
 
     absValueXspeed = map(distanceFromMiddleOfPaddle, 0, (paddleLength / 2) + 1, ballSlowestSpeed, ballFastestSpeed);
-    console.log(oballXspeed);
     (oballXspeed > 0) ? ballXSpeed = absValueXspeed : ballXSpeed = -absValueXspeed;
     ballYSpeed = -ballYSpeed; // change direction
   }
