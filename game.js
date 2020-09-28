@@ -27,6 +27,7 @@ class Borders{
     rect(canvasWidth - this.width, 0, this.width, canvasHeight);
   }
 }
+
 class ScoreBoard{
   constructor(){
     this.boardColor = '#00ffff';
@@ -82,6 +83,7 @@ class Paddle{
     paddle.animate();
   }
 }
+
 class Ball{
   constructor(){
     this.radius = 30;
@@ -211,6 +213,7 @@ class Ball{
 
 
 }
+
 class Villain{
   constructor(){
     this.x = -800;
