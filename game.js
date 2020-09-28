@@ -210,8 +210,6 @@ class Ball{
     this.y = (canvasHeight / 2);
     ball.animate();
   }
-
-
 }
 
 class Villain{
