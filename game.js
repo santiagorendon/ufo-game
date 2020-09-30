@@ -175,6 +175,7 @@ class Ball{
     }
     // if ball hits paddle
     if (this.isHit()) {
+      this.y = paddle.top-this.radius-5;
       scoreboard.bounceCount += 1;
       ballBounce.play();
       let oballXspeed = this.xSpeed;// original x speed
